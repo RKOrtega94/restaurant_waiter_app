@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_waiter_app/src/core/app.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:restaurant_waiter_app/src/core/app/app.dart';
 
 void main() {
-  runApp(const App());
+  runApp(
+    const ProviderScope(
+      child: App(),
+    ),
+  );
 }

@@ -1,0 +1,14 @@
+{
+    "@@author": "RKOrtega",
+    "@@locale": "en",
+    "login": "Login",
+    "@login": {
+        "comment": "Login page",
+        "type": "text"   
+    },
+    "appTitle": "Restaurant Waiter",
+    "@appTitle": {
+        "comment": "App title",
+        "type": "text"
+    }
+}
