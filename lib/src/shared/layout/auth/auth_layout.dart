@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:restaurant_waiter_app/src/core/app/theme_provider.dart';
+import 'package:restaurant_waiter_app/src/core/app/provider/theme_provider.dart';
 import 'package:restaurant_waiter_app/src/core/constants/app_sizes.dart';
 
 /// Auth Layout
@@ -13,9 +13,10 @@ class AuthLayout extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final themeState = ref.watch(themeProvider);
+    final themeState = ref.watch(themesProvider);
     return Scaffold(
       extendBody: true,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: Stack(
         fit: StackFit.expand,
         children: [
@@ -34,14 +35,15 @@ class AuthLayout extends ConsumerWidget {
             top: AppSizes.spacingSmall,
             right: AppSizes.spacingSmall,
             child: IconButton(
-              onPressed: () => ref
-                  .read(themeProvider.notifier)
-                  .toggleTheme(themeState == ThemeMode.dark),
+              onPressed: () => ref.read(themesProvider.notifier).changeTheme(
+                    themeState == ThemeMode.dark ? false : true,
+                  ),
               icon: Icon(
                 themeState == ThemeMode.dark
                     ? Icons.light_mode
                     : Icons.dark_mode,
               ),
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
         ],

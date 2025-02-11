@@ -24,6 +24,7 @@ class LoginScreen extends StatelessWidget {
                 AppLocalizations.of(context).login,
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.bold,
+                      color: Theme.of(context).colorScheme.onSurface,
                     ),
               ),
               AppTextField(
