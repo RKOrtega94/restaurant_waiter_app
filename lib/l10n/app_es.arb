@@ -1,5 +1,9 @@
 {
     "@@locale": "es",
     "login": "Iniciar sesión",
-    "appTitle": "Restaurante Camarero"
+    "appTitle": "Restaurante Camarero",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "emailHint": "Introduce tu correo electrónico",
+    "passwordHint": "Introduce tu contraseña"
 }

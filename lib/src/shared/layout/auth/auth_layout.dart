@@ -13,27 +13,14 @@ class AuthLayout extends StatelessWidget {
     return Scaffold(
       extendBody: true,
       body: Center(
-        child: Container(
-          padding: const EdgeInsets.all(16),
-          width: MediaQuery.sizeOf(context).width > 600
-              ? 600
-              : MediaQuery.sizeOf(context).width,
-          height: MediaQuery.sizeOf(context).width > 600
-              ? null
-              : MediaQuery.sizeOf(context).height,
-          decoration: BoxDecoration(
-            color: Theme.of(context).cardColor,
-            borderRadius: BorderRadius.circular(16),
-            boxShadow: [
-              if (MediaQuery.sizeOf(context).width > 600)
-                BoxShadow(
-                  color: Theme.of(context).shadowColor.withAlpha(150),
-                  blurRadius: 16,
-                  offset: const Offset(0, 4),
-                ),
-            ],
+        child: Card(
+          margin: const EdgeInsets.all(16),
+          elevation: 5,
+          child: Container(
+            padding: const EdgeInsets.all(16),
+            constraints: const BoxConstraints(maxWidth: 400),
+            child: child,
           ),
-          child: child,
         ),
       ),
     );

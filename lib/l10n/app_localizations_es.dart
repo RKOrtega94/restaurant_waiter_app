@@ -11,4 +11,16 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get appTitle => 'Restaurante Camarero';
+
+  @override
+  String get email => 'Correo electrónico';
+
+  @override
+  String get password => 'Contraseña';
+
+  @override
+  String get emailHint => 'Introduce tu correo electrónico';
+
+  @override
+  String get passwordHint => 'Introduce tu contraseña';
 }

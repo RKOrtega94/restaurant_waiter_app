@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_waiter_app/l10n/app_localizations.dart';
 import 'package:restaurant_waiter_app/src/core/app/app_router.dart';
-import 'package:restaurant_waiter_app/src/core/app/theme.dart';
+import 'package:restaurant_waiter_app/src/core/app/theme/theme.dart';
 
 class App extends StatelessWidget {
   const App({super.key});

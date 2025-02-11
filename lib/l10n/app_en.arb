@@ -10,5 +10,25 @@
     "@appTitle": {
         "comment": "App title",
         "type": "text"
+    },
+    "email": "Email",
+    "@email": {
+        "comment": "Email field",
+        "type": "text"
+    },
+    "password": "Password",
+    "@password": {
+        "comment": "Password field",
+        "type": "text"
+    },
+    "emailHint": "Enter your email",
+    "@emailHint": {
+        "comment": "Email hint",
+        "type": "text"
+    },
+    "passwordHint": "Enter your password",
+    "@passwordHint": {
+        "comment": "Password hint",
+        "type": "text"
     }
 }
