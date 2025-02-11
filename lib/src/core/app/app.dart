@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:restaurant_waiter_app/l10n/app_localizations.dart';
 import 'package:restaurant_waiter_app/src/core/app/app_router.dart';
 import 'package:restaurant_waiter_app/src/core/app/theme/theme.dart';
+import 'package:restaurant_waiter_app/src/core/app/theme_provider.dart';
 
-class App extends StatelessWidget {
+class App extends ConsumerWidget {
   const App({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final themeState = ref.watch(themeProvider);
     return MaterialApp(
       onGenerateTitle: (context) => AppLocalizations.of(context).appTitle,
       debugShowCheckedModeBanner: false,
@@ -16,7 +19,7 @@ class App extends StatelessWidget {
       locale: AppLocalizations.supportedLocales.first,
       routes: AppRouter.routes,
       initialRoute: AppRouter.login,
-      themeMode: ThemeMode.system,
+      themeMode: themeState,
       theme: lightTheme(),
       darkTheme: darkTheme(),
     );
