@@ -1,6 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_waiter_app/core/constants/app_sizes.dart';
 
+/// App Button
+///
+/// A custom button widget.
+///
+/// - [label] is the button text.
+/// - [onPressed] is the button action.
+/// - [prefixIcon] is the icon before the button text.
+/// - [suffixIcon] is the icon after the button text.
+///
+/// Example:
+/// ```dart
+/// AppButton(
+///   label: 'Sign In',
+///   onPressed: () => print('Sign In'),
+///   prefixIcon: Icon(Icons.login),
+/// );
+/// ```
 class AppButton extends StatelessWidget {
   const AppButton({
     required this.label,

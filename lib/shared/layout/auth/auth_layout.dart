@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:restaurant_waiter_app/core/app/provider/theme_provider.dart';
 import 'package:restaurant_waiter_app/core/constants/app_sizes.dart';
+import 'package:restaurant_waiter_app/l10n/app_localizations.dart';
+import 'package:restaurant_waiter_app/shared/widgets/buttons/app_dropdown_button.dart';
+import 'package:restaurant_waiter_app/shared/widgets/buttons/app_lang_dropdown.dart';
 
 /// Auth Layout
 ///
@@ -34,16 +37,22 @@ class AuthLayout extends ConsumerWidget {
           Positioned(
             top: AppSizes.spacingSmall,
             right: AppSizes.spacingSmall,
-            child: IconButton(
-              onPressed: () => ref.read(themesProvider.notifier).changeTheme(
-                    themeState == ThemeMode.dark ? false : true,
+            child: Row(
+              children: [
+                const AppLangDropdown(),
+                IconButton(
+                  onPressed: () =>
+                      ref.read(themesProvider.notifier).changeTheme(
+                            themeState == ThemeMode.dark ? false : true,
+                          ),
+                  icon: Icon(
+                    themeState == ThemeMode.dark
+                        ? Icons.light_mode
+                        : Icons.dark_mode,
                   ),
-              icon: Icon(
-                themeState == ThemeMode.dark
-                    ? Icons.light_mode
-                    : Icons.dark_mode,
-              ),
-              color: Theme.of(context).colorScheme.onSurface,
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ],
             ),
           ),
         ],
