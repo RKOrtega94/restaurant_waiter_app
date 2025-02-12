@@ -4,11 +4,14 @@ import 'package:restaurant_waiter_app/shared/layout/auth/auth_layout.dart';
 import 'package:restaurant_waiter_app/shared/widgets/buttons/app_button.dart';
 import 'package:restaurant_waiter_app/shared/widgets/fields/app_text_field.dart';
 
+/// {@category Features}
+/// {@subCategory Auth}
+///
 /// Login Screen
 ///
 /// This screen is responsible for displaying the login form.
 ///
-/// * [route] - The route of the screen.
+/// - [route] - The route of the screen.
 class LoginScreen extends StatelessWidget {
   static const String route = '/login';
   const LoginScreen({

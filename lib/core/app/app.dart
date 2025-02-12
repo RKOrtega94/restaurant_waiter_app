@@ -33,7 +33,7 @@ class App extends ConsumerWidget {
       themeMode: themeState,
       darkTheme: darkTheme(),
       routes: AppRouter.routes,
-      initialRoute: AppRouter.login,
+      initialRoute: AppRouter.dashboard,
       debugShowCheckedModeBanner: false,
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
