@@ -6,6 +6,20 @@ import 'package:restaurant_waiter_app/core/app/app_router.dart';
 import 'package:restaurant_waiter_app/core/app/theme/theme.dart';
 import 'package:restaurant_waiter_app/core/app/provider/theme_provider.dart';
 
+/// {@category core}
+/// {@category app}
+///
+/// The root widget of the application.
+///
+/// This widget is responsible for setting up the application theme, language,
+/// and routing configuration. It uses the [ConsumerWidget] class provided by
+/// the Riverpod package to listen to changes in the app theme and language
+/// states and update the UI accordingly.
+///
+/// The [App] widget is the entry point of the application and is responsible for
+/// setting up the application theme, language, and routing configuration. It
+/// uses the [ConsumerWidget] class provided by the Riverpod package to listen
+/// to changes in the app theme and language states and update the UI accordingly.
 class App extends ConsumerWidget {
   const App({super.key});
 

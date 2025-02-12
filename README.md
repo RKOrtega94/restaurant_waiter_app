@@ -1,16 +1,16 @@
-# restaurant_waiter_app
+# RESTAURANT WAITER APP
 
-A new Flutter project.
+This is a simple app that allows a waiter to manage the orders of a restaurant. The app is built using Flutter.
+
+## Features
+
+- Authentication
+  - Login
+  - Forgot Password
+  - OTP Verification
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Clone the repository
+2. Run `flutter pub get` (also run `flutter upgrade` if you haven't done so in a while and `flutter pub upgrade` to get the latest packages)
+3. Run `flutter run` to build and run the app on your device/emulator

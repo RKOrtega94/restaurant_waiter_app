@@ -1,5 +1,23 @@
 import 'package:flutter/material.dart';
 
+/// App Text Field
+///
+/// A custom text field widget.
+///
+/// - [enabled] is a flag to enable or disable the text field.
+/// - [controller] is the controller for the text field.
+/// - [labelText] is the label text for the text field.
+/// - [hintText] is the hint text for the text field.
+///
+/// Example:
+/// ```dart
+/// AppTextField(
+///   enabled: true,
+///   controller: TextEditingController(),
+///   labelText: 'Label',
+///   hintText: 'Hint',
+/// );
+/// ```
 class AppTextField extends StatelessWidget {
   const AppTextField({
     this.enabled = true,
