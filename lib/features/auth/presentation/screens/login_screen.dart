@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_waiter_app/l10n/app_localizations.dart';
-import 'package:restaurant_waiter_app/src/shared/layout/auth/auth_layout.dart';
-import 'package:restaurant_waiter_app/src/shared/widgets/buttons/app_button.dart';
-import 'package:restaurant_waiter_app/src/shared/widgets/fields/app_text_field.dart';
+import 'package:restaurant_waiter_app/shared/layout/auth/auth_layout.dart';
+import 'package:restaurant_waiter_app/shared/widgets/buttons/app_button.dart';
+import 'package:restaurant_waiter_app/shared/widgets/fields/app_text_field.dart';
 
 class LoginScreen extends StatelessWidget {
   static const String route = '/login';

@@ -12,7 +12,6 @@ class Themes extends _$Themes {
   }
 
   void changeTheme(bool isOn) {
-    debugPrint('changeTheme: $isOn');
     state = isOn ? ThemeMode.dark : ThemeMode.light;
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:restaurant_waiter_app/src/features/auth/presentation/screens/login_screen.dart';
+import 'package:restaurant_waiter_app/features/auth/presentation/screens/login_screen.dart';
 
 /// App Router
 ///

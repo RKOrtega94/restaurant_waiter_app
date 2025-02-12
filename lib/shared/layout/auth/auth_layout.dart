@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:restaurant_waiter_app/src/core/app/provider/theme_provider.dart';
-import 'package:restaurant_waiter_app/src/core/constants/app_sizes.dart';
+import 'package:restaurant_waiter_app/core/app/provider/theme_provider.dart';
+import 'package:restaurant_waiter_app/core/constants/app_sizes.dart';
 
 /// Auth Layout
 ///

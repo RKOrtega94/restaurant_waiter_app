@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_waiter_app/src/core/constants/app_sizes.dart';
+import 'package:restaurant_waiter_app/core/constants/app_sizes.dart';
 
 /// Light Theme
 ThemeData lightTheme() => ThemeData(
