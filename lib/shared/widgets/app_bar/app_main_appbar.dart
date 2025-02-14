@@ -19,17 +19,22 @@ class AppMainAppbar extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return SliverAppBar(
       snap: true,
-      pinned: true,
+      pinned: false,
       floating: true,
       titleSpacing: 0,
       centerTitle: false,
       title: const Text('Restaurant Waiter App'),
       leading: IconButton(
-        icon: const Icon(Icons.menu),
+        icon: Icon(
+          Icons.menu,
+          color: Theme.of(context).colorScheme.onSurface,
+        ),
         onPressed: () {
           scaffoldKey.currentState!.openDrawer();
         },
       ),
+      surfaceTintColor: Colors.transparent,
+      backgroundColor: Theme.of(context).colorScheme.surface,
     );
   }
 }

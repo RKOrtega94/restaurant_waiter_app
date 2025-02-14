@@ -23,16 +23,31 @@ class MainLayout extends ConsumerWidget {
     return Scaffold(
       key: scaffoldKey,
       extendBody: true,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       drawer: const AppSideNav(),
-      body: CustomScrollView(
-        slivers: [
+      body: NestedScrollView(
+        floatHeaderSlivers: true,
+        headerSliverBuilder: (context, innerBoxIsScrolled) => [
           AppMainAppbar(
             scaffoldKey: scaffoldKey,
           ),
-          const SliverToBoxAdapter(
-            child: Placeholder(),
-          ),
         ],
+        body: CustomScrollView(
+          slivers: [
+            /* AppMainAppbar(
+              scaffoldKey: scaffoldKey,
+            ), */
+            SliverToBoxAdapter(
+              child: ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                padding: EdgeInsets.zero,
+                itemBuilder: (context, index) => Placeholder(),
+                itemCount: 20,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
