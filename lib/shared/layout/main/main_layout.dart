@@ -29,7 +29,7 @@ class MainLayout extends ConsumerWidget {
           AppMainAppbar(
             scaffoldKey: scaffoldKey,
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: Placeholder(),
           ),
         ],

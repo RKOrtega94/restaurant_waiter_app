@@ -7,7 +7,6 @@ class AppSideNav extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final bool mobile = MediaQuery.sizeOf(context).width < 600;
     return SizedBox(
       width: AppSizes.drawerWidth,
       height: MediaQuery.sizeOf(context).height,
