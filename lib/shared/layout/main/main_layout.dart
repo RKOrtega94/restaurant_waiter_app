@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:restaurant_waiter_app/shared/widgets/app_bar/app_main_appbar.dart';
+import 'package:restaurant_waiter_app/shared/widgets/side_nav/app_side_nav.dart';
 
 /// Main layout
 ///
@@ -6,7 +9,7 @@ import 'package:flutter/material.dart';
 /// main content of the application.
 ///
 /// - [child] - The child widget to be displayed in the main layout.
-class MainLayout extends StatelessWidget {
+class MainLayout extends ConsumerWidget {
   const MainLayout({
     required this.child,
     super.key,
@@ -15,55 +18,21 @@ class MainLayout extends StatelessWidget {
   final Widget child;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
     return Scaffold(
+      key: scaffoldKey,
       extendBody: true,
-      body: SizedBox(
-        height: MediaQuery.sizeOf(context).height,
-        width: MediaQuery.sizeOf(context).width,
-        child: Row(
-          spacing: 10,
-          children: [
-            NavigationRail(
-              backgroundColor: Theme.of(context).colorScheme.surface,
-              extended: true,
-              elevation: 8,
-              indicatorColor: Colors.transparent,
-              unselectedIconTheme: const IconThemeData(color: Colors.grey),
-              selectedIconTheme: const IconThemeData(color: Colors.blue),
-              selectedLabelTextStyle: const TextStyle(
-                color: Colors.blue,
-                fontWeight: FontWeight.bold,
-              ),
-              leading: const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: CircleAvatar(
-                  radius: 20,
-                  backgroundImage: NetworkImage(
-                    'https://avatars.githubusercontent.com/u/23533486?v=4',
-                  ),
-                ),
-              ),
-              destinations: const [
-                NavigationRailDestination(
-                  icon: Icon(Icons.home),
-                  label: Text('Home'),
-                ),
-                NavigationRailDestination(
-                  icon: Icon(Icons.restaurant),
-                  label: Text('Orders'),
-                ),
-                NavigationRailDestination(
-                  icon: Icon(Icons.settings),
-                  label: Text('Settings'),
-                ),
-              ],
-              selectedIndex: 0,
-              onDestinationSelected: (int index) {},
-            ),
-            const Expanded(child: Placeholder())
-          ],
-        ),
+      drawer: const AppSideNav(),
+      body: CustomScrollView(
+        slivers: [
+          AppMainAppbar(
+            scaffoldKey: scaffoldKey,
+          ),
+          SliverToBoxAdapter(
+            child: Placeholder(),
+          ),
+        ],
       ),
     );
   }
