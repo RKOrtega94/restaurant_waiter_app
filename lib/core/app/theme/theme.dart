@@ -48,6 +48,18 @@ ThemeData lightTheme() => ThemeData(
 /// Dark Theme
 ThemeData darkTheme() => lightTheme().copyWith(
     colorScheme: const ColorScheme.dark(),
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Colors.black,
+      elevation: 0,
+      iconTheme: IconThemeData(
+        color: Colors.white,
+      ),
+    ),
+    cardColor: Colors.black,
+    cardTheme: const CardTheme(
+      color: Colors.black,
+      elevation: 5,
+    ),
     inputDecorationTheme: lightTheme().inputDecorationTheme.copyWith(
           fillColor: Colors.black,
           border: OutlineInputBorder(

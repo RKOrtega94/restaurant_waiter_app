@@ -8,6 +8,7 @@
 class AppSizes {
   static const double inputRadius = 10.0;
   static const double padding = 16.0;
+  static const double paddingSmall = 8.0;
   static const double spacingSmall = 8.0;
   static const double spacingMedium = 16.0;
   static const double drawerPadding = 8.0;
