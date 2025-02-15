@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_waiter_app/core/constants/app_sizes.dart';
 import 'package:restaurant_waiter_app/features/dashboard/presentation/components/dashboard_report_card.dart';
 
 /// DashboardReportSection
@@ -21,7 +22,7 @@ class DashboardReportSection extends StatelessWidget {
         crossAxisSpacing: MediaQuery.sizeOf(context).width * 0.01,
         mainAxisSpacing: MediaQuery.sizeOf(context).width * 0.01,
       ),
-      padding: EdgeInsets.zero,
+      padding: const EdgeInsets.symmetric(horizontal: AppSizes.paddingSmall),
       children: [
         const DashboardReportCard(
           title: 'Total Orders',
