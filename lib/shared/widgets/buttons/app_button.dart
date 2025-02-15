@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_waiter_app/core/app/theme/button_styles.dart';
 import 'package:restaurant_waiter_app/core/constants/app_sizes.dart';
 
 /// App Button
@@ -24,6 +25,7 @@ class AppButton extends StatelessWidget {
     this.onPressed,
     this.prefixIcon,
     this.suffixIcon,
+    this.mainAxisAlignment = MainAxisAlignment.center,
     super.key,
   });
 
@@ -31,6 +33,7 @@ class AppButton extends StatelessWidget {
   final void Function()? onPressed;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
+  final MainAxisAlignment mainAxisAlignment;
 
   @override
   Widget build(BuildContext context) {
@@ -39,9 +42,14 @@ class AppButton extends StatelessWidget {
         width: constraints.maxWidth,
         child: ElevatedButton(
           onPressed: onPressed,
+          style: AppButtonStyle.getStyle(
+            context,
+            // TODO: Add button type with selected or current route
+            ButtonType.ghost,
+          ),
           child: Row(
             spacing: AppSizes.spacingSmall,
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: mainAxisAlignment,
             children: [
               if (prefixIcon != null) prefixIcon!,
               Text(label),

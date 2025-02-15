@@ -30,5 +30,25 @@
     "@passwordHint": {
         "comment": "Password hint",
         "type": "text"
+    },
+    "dashboard": "Dashboard",
+    "@dashboard": {
+        "comment": "Dashboard page",
+        "type": "text"
+    },
+    "orders": "Orders",
+    "@orders": {
+        "comment": "Orders page",
+        "type": "text"
+    },
+    "tables": "Tables",
+    "@tables": {
+        "comment": "Tables page",
+        "type": "text"
+    },
+    "settings": "Settings",
+    "@settings": {
+        "comment": "Settings page",
+        "type": "text"
     }
 }

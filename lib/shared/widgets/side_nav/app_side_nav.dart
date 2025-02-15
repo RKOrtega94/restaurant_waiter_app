@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:restaurant_waiter_app/core/constants/app_sizes.dart';
+import 'package:restaurant_waiter_app/l10n/app_localizations.dart';
+import 'package:restaurant_waiter_app/shared/widgets/side_nav/app_side_nav_item.dart';
+import 'package:restaurant_waiter_app/shared/widgets/side_nav/app_side_nav_logo.dart';
 
 class AppSideNav extends ConsumerWidget {
   const AppSideNav({super.key});
@@ -28,17 +31,25 @@ class AppSideNav extends ConsumerWidget {
             ),
           ),
           child: Column(
-            spacing: AppSizes.spacingMedium,
+            spacing: AppSizes.spacingSmall,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Expanded(
-                child: Placeholder(),
+              const AppSideNavLogo(),
+              AppSideNavItem(
+                label: AppLocalizations.of(context).dashboard,
+                icon: Icons.dashboard,
               ),
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.logout,
-                ),
+              AppSideNavItem(
+                label: AppLocalizations.of(context).orders,
+                icon: Icons.shopping_cart,
+              ),
+              AppSideNavItem(
+                label: AppLocalizations.of(context).tables,
+                icon: Icons.table_chart,
+              ),
+              AppSideNavItem(
+                label: AppLocalizations.of(context).settings,
+                icon: Icons.settings,
               ),
             ],
           ),

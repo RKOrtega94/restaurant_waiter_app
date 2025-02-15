@@ -25,4 +25,16 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get passwordHint => 'Introduce tu contraseña';
+
+  @override
+  String get dashboard => 'Tablero';
+
+  @override
+  String get orders => 'Pedidos';
+
+  @override
+  String get tables => 'Mesas';
+
+  @override
+  String get settings => 'Ajustes';
 }

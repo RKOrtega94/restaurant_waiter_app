@@ -5,5 +5,9 @@
     "email": "Correo electrónico",
     "password": "Contraseña",
     "emailHint": "Introduce tu correo electrónico",
-    "passwordHint": "Introduce tu contraseña"
+    "passwordHint": "Introduce tu contraseña",
+    "dashboard": "Tablero",
+    "orders": "Pedidos",
+    "tables": "Mesas",
+    "settings": "Ajustes"
 }
