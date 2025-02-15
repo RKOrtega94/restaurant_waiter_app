@@ -6,6 +6,21 @@ import 'package:restaurant_waiter_app/core/constants/app_sizes.dart';
 ///
 /// {@category Features}
 /// {@subCategory Dashboard}
+///
+/// DashboardReportCard is a StatelessWidget that displays the report card section of the dashboard.
+///
+/// This widget is used in the [DashboardScreen].
+///
+/// - [title] - The title of the report card.
+/// - [value] - The value of the report card.
+///
+/// Example:
+/// ```dart
+/// DashboardReportCard(
+///   title: 'Total Orders',
+///   value: '10',
+/// )
+/// ```
 class DashboardReportCard extends StatelessWidget {
   const DashboardReportCard({
     required this.title,

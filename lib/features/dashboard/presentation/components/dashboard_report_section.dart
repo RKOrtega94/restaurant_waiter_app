@@ -17,7 +17,7 @@ class DashboardReportSection extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: MediaQuery.sizeOf(context).width > 600 ? 4 : 2,
-        childAspectRatio: MediaQuery.sizeOf(context).width > 600 ? 1.5 : 1.2,
+        childAspectRatio: 1.5,
         crossAxisSpacing: MediaQuery.sizeOf(context).width * 0.01,
         mainAxisSpacing: MediaQuery.sizeOf(context).width * 0.01,
       ),
