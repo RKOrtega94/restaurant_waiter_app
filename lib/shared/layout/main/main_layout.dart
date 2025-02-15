@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:restaurant_waiter_app/core/constants/app_sizes.dart';
 import 'package:restaurant_waiter_app/shared/widgets/app_bar/app_main_appbar.dart';
 import 'package:restaurant_waiter_app/shared/widgets/side_nav/app_side_nav.dart';
 
@@ -24,20 +25,33 @@ class MainLayout extends ConsumerWidget {
       key: scaffoldKey,
       extendBody: true,
       backgroundColor: Theme.of(context).colorScheme.surface,
-      drawer: const AppSideNav(),
-      body: CustomScrollView(
-        slivers: [
-          AppMainAppbar(
-            scaffoldKey: scaffoldKey,
-          ),
-          SliverToBoxAdapter(
-            child: SizedBox(
-              height: MediaQuery.sizeOf(context).height -
-                  AppBar().preferredSize.height,
-              child: child,
+      drawer: MediaQuery.sizeOf(context).width > AppSizes.mobileBreakpoint
+          ? null
+          : const AppSideNav(),
+      body: SizedBox(
+        width: MediaQuery.sizeOf(context).width,
+        height: MediaQuery.sizeOf(context).height,
+        child: Row(
+          spacing: AppSizes.spacingMedium,
+          children: [
+            if (MediaQuery.sizeOf(context).width > AppSizes.mobileBreakpoint)
+              const AppSideNav(),
+            Expanded(
+              child: CustomScrollView(
+                slivers: [
+                  if (MediaQuery.sizeOf(context).width <=
+                      AppSizes.mobileBreakpoint)
+                    AppMainAppbar(
+                      scaffoldKey: scaffoldKey,
+                    ),
+                  SliverToBoxAdapter(
+                    child: child,
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

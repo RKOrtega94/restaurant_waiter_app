@@ -4,7 +4,18 @@ import 'package:restaurant_waiter_app/core/constants/app_sizes.dart';
 /// Light Theme
 ThemeData lightTheme() => ThemeData(
       useMaterial3: true,
-      colorScheme: const ColorScheme.light(),
+      colorScheme: const ColorScheme.light(
+        surface: Color(
+          0xFFF9F9F9,
+        ),
+      ),
+      appBarTheme: const AppBarTheme(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        iconTheme: IconThemeData(
+          color: Colors.black,
+        ),
+      ),
       inputDecorationTheme: InputDecorationTheme(
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppSizes.inputRadius),

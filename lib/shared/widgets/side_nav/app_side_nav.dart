@@ -10,48 +10,76 @@ class AppSideNav extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return SizedBox(
+    return Container(
       width: AppSizes.drawerWidth,
       height: MediaQuery.sizeOf(context).height,
+      padding: EdgeInsets.all(
+        MediaQuery.sizeOf(context).width > AppSizes.mobileBreakpoint
+            ? AppSizes.spacingSmall
+            : 0,
+      ),
       child: LayoutBuilder(
-        builder: (context, constraints) => Container(
-          width: constraints.maxWidth,
-          height: constraints.maxHeight,
-          padding: EdgeInsets.only(
-            top: MediaQuery.paddingOf(context).top,
-            left: AppSizes.drawerPadding,
-            right: AppSizes.drawerPadding,
-            bottom: MediaQuery.paddingOf(context).bottom,
+        builder: (context, constraints) => Material(
+          elevation: 5,
+          color: Theme.of(context).appBarTheme.backgroundColor,
+          borderRadius: BorderRadius.only(
+            topRight: const Radius.circular(AppSizes.inputRadius),
+            bottomRight: const Radius.circular(AppSizes.inputRadius),
+            topLeft:
+                MediaQuery.sizeOf(context).width > AppSizes.mobileBreakpoint
+                    ? const Radius.circular(AppSizes.inputRadius)
+                    : Radius.zero,
+            bottomLeft:
+                MediaQuery.sizeOf(context).width > AppSizes.mobileBreakpoint
+                    ? const Radius.circular(AppSizes.inputRadius)
+                    : Radius.zero,
           ),
-          decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.surface,
-            borderRadius: const BorderRadius.only(
-              topRight: Radius.circular(AppSizes.inputRadius),
-              bottomRight: Radius.circular(AppSizes.inputRadius),
+          child: Container(
+            width: constraints.maxWidth,
+            height: constraints.maxHeight,
+            padding: EdgeInsets.only(
+              top: MediaQuery.paddingOf(context).top + AppSizes.spacingSmall,
+              left: AppSizes.drawerPadding,
+              right: AppSizes.drawerPadding,
+              bottom: MediaQuery.paddingOf(context).bottom,
             ),
-          ),
-          child: Column(
-            spacing: AppSizes.spacingSmall,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const AppSideNavLogo(),
-              AppSideNavItem(
-                label: AppLocalizations.of(context).dashboard,
-                icon: Icons.dashboard,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topRight: const Radius.circular(AppSizes.inputRadius),
+                bottomRight: const Radius.circular(AppSizes.inputRadius),
+                topLeft:
+                    MediaQuery.sizeOf(context).width > AppSizes.mobileBreakpoint
+                        ? const Radius.circular(AppSizes.inputRadius)
+                        : Radius.zero,
+                bottomLeft:
+                    MediaQuery.sizeOf(context).width > AppSizes.mobileBreakpoint
+                        ? const Radius.circular(AppSizes.inputRadius)
+                        : Radius.zero,
               ),
-              AppSideNavItem(
-                label: AppLocalizations.of(context).orders,
-                icon: Icons.shopping_cart,
-              ),
-              AppSideNavItem(
-                label: AppLocalizations.of(context).tables,
-                icon: Icons.table_chart,
-              ),
-              AppSideNavItem(
-                label: AppLocalizations.of(context).settings,
-                icon: Icons.settings,
-              ),
-            ],
+            ),
+            child: Column(
+              spacing: AppSizes.spacingSmall,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const AppSideNavLogo(),
+                AppSideNavItem(
+                  label: AppLocalizations.of(context).dashboard,
+                  icon: Icons.dashboard,
+                ),
+                AppSideNavItem(
+                  label: AppLocalizations.of(context).orders,
+                  icon: Icons.shopping_cart,
+                ),
+                AppSideNavItem(
+                  label: AppLocalizations.of(context).tables,
+                  icon: Icons.table_chart,
+                ),
+                AppSideNavItem(
+                  label: AppLocalizations.of(context).settings,
+                  icon: Icons.settings,
+                ),
+              ],
+            ),
           ),
         ),
       ),

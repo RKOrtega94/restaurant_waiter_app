@@ -13,4 +13,5 @@ class AppSizes {
   static const double drawerPadding = 8.0;
   static const double drawerWidth = 250.0;
   static const double drawerIosVerticalPadding = 16.0;
+  static const double mobileBreakpoint = 600.0;
 }
